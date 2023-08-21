@@ -4,6 +4,8 @@ public class Exercise6_22 {
 	
 	boolean isNumber(String str) {
 		if(charAt(int i)) {
+			
+			
 			return;
 		}
 	}

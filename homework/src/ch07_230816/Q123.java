@@ -49,7 +49,6 @@ public class Q123 {
 //	}
 	static int bingoCount(int[][] arr) {
 		int bingoCnt=0;
-		
 		int cross1 = 0; // \
 		int cross2 = 0; // /
 		int garo = 0;
@@ -59,8 +58,8 @@ public class Q123 {
 		for(int i=0; i<arr.length; i++) {
 			for(int j=0; j<arr[i].length; j++) {
 				if(arr[i][j]==1) {
-//					if()
-					cross1++; // i와 j의 규칙을 찾아서. 뭐하면 여기에 뭘 넣는지를.
+//					if() // i와 j의 규칙을 찾아서. 뭐하면 여기에 뭘 넣는지를.
+					cross1++; 
 				}
 			}
 			System.out.println();
@@ -75,7 +74,6 @@ public class Q123 {
 			System.out.println();
 		}
 
-		
 		// 대각선
 		for(int i=0; i<arr.length; i++) {
 			for(int j=0; j<arr[i].length; j++) {
@@ -85,11 +83,10 @@ public class Q123 {
 			}
 			System.out.println();
 		}
-		System.out.println(cross1);
-		System.out.println(cross2);
+		System.out.println("cross1= "+cross1);
+		System.out.println("cross2= "+cross2);
 	
 		return bingoCnt;
-		
 	}
 	//Q3 5장의 카드를 배열로 받아서 등급을 문자열로 반환하는 rank check 메서드를 작성하시오
 	// 등급 예시
