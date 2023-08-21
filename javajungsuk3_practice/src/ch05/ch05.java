@@ -1,4 +1,4 @@
-package chapter;
+package ch05;
 
 public class ch05 {
 	public static void ch5_3() {
