@@ -1,5 +1,7 @@
 package ch07_230816;
 
+import org.junit.*;
+import static org.junit.Assert.*;
 public class Q1 {
 	// Q1. 세 개의 정수 x,y,z를 받아서 중간 크기의 값을 반환하는 mid라는 메서드 작성하시오. 
 	// 정렬 쓰지 말고 해보기 !
@@ -48,4 +50,9 @@ public class Q1 {
 		System.out.println(mid(2, 1, 4));
 	}
 
+	@Test
+	public void Test1() {
+		assertTrue(true);
+	}
+	
 }

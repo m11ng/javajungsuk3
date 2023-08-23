@@ -1,17 +1,19 @@
 package ch06;
 
 class Exercise6_23 {
-	
-	int max(int[] arr) {
-		for(int i=0; i<arr.length-1; i++) {
-			int tmp = 0;
-			if(arr[i]>arr[i+1]) {
-				tmp = arr[i];
-				arr[i] = arr[i+1];
-				arr[i+1] = tmp;
+	static int max(int[] arr) {
+		// if문과 for문의 위치 때문에 애먹었음. 코드의 흐름. 익히기.
+		if(arr==null || arr.length==0) {
+			return -999999;
+		}
+		
+		int max=arr[0];
+		for(int i=1; i<arr.length; i++) {
+			if(arr[i]>max) {
+				max =arr[i];
 			}
 		}
-		return arr[4];
+		return max;
 		
 	}
 

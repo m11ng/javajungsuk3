@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class DeckTest {
 	public static void main(String args[]) {
 		Deck d = new Deck();	// 카드 한 벌(Deck)을 만든다.
@@ -49,8 +47,8 @@ class Deck {
 
 // Card클래스
 class Card {
-	static final int KIND_MAX = 4;	// 카드 무늬의 수
-	static final int NUM_MAX  = 13;	// 무늬별 카드 수
+	static final int KIND_MAX = 4;	// 카드 무늬의 종류
+	static final int NUM_MAX  = 13;	// 무늬별 카드 개수
 
 	static final int SPADE   = 4;
 	static final int DIAMOND = 3;
@@ -63,7 +61,7 @@ class Card {
 	Card() {
 		this(SPADE, 1);
 	}
-
+ 
 	Card(int kind, int number) {
 		this.kind = kind;
 		this.number = number;

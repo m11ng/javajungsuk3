@@ -9,6 +9,9 @@ public class Q3 {
 	// 4. " THREE CARD" 같은 카드 3장
 	// 5. "STRAIGTH" 연속 숫자 5장(2,3,4,5,,6)
 	// 6. "FLUSH
+	
+	
+	
 	static void rankCheck() {
 		
 	}
