@@ -18,6 +18,7 @@ public class MyVector implements List {
 	}
 
     // 최소한의 저장공간(capacity)를 확보하는 메서드
+	// 메소드 머하는앤지 ㅜㅜ 해석이 안됨.
 	public void ensureCapacity(int minCapacity) {
 		if (minCapacity - data.length > 0)
 			setCapacity(minCapacity);

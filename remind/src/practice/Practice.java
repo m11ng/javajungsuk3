@@ -1,77 +1,114 @@
 package practice;
+import java.util.List;
+import java.util.Vector;
 
-class DrawShape2 {
-	public static void main(String[] args) {
-		Point[] p = {	 new Point(100, 100),
-					 	 new Point(140, 50),
-					 	 new Point(200, 100),
-					 	 new Point(300, 100)
-					};
-		Triangle t = new Triangle(p);
-		Circle c = new Circle(new Point(150, 100), 50);
-		
-		System.out.println(c.center.x);
-		System.out.println(c.center.y);
-		System.out.println(c.r);
-		
-		Point p2 = new Point(100, 150);
-		Circle c2 = new Circle(p2, 50);
-		
-		System.out.println(c2.center.x);
-		
-		t.draw();
-		c.draw();
+public class Practice implements List {
+// 이 위로 지우지 말기 !
+	Object[] data = null;
+	int capacity = 0;
+	int size = 0;
+	
+	public Practice(int capacity) {
+		if(capacity < 0) {
+			throw new IllegalArgumentException("유효하지 않은 값입니다. : "+capacity);
+		}
+		this.capacity = capacity;
+		data = new Object[capacity];
 	}
-}
+	
+	public Practice() {
+		this(10);
+	}
+	
+	public void ensureCapacity(int minCapacity) { // 1
+		if(minCapacity - data.length > 0) // 나보다 용량이 큰 애를 데려왔어
+			setCapacity(minCapacity); // 그럼 쏏 호출
+	}
+	
+	private void setCapacity(int capacity) { // 나보다 큰애가
+		if(this.capacity==capacity) return;
+	
+		Object[] tmp = new Object[capacity];
+		System.arraycopy(data,0, tmp,0,size);
+		data = tmp;
+		this.capacity = capacity;
+	}
+	
+	public boolean add(Object obj) {
+		// 새로운 객체를 저장하기 전에 저장할 공간을 확보한다.
+		ensureCapacity(size+1);
+		data[size++]=obj;
+		return true;
+	}
+	
+	public Object get(int index) {
+		if(index <0 || index >= size)
+			throw new IndexOutOfBoundsException("범위를 벗어났습니다.");
+		return data[index];
+	}
+	public Object remove(int index) {
+		Object oldObj = null;
+		if(index <0 || index>=size) {
+			throw new IndexOutOfBoundsException("범위를 벗어났습니다.");
+		}
+			
+		oldObj = data[index];
+		if(index != size-1) {// 마지막 객체 : size-1
+			System.arraycopy(data, index+1, data, index, size-index-1);
+		}
+		
+		data[size-1]=null;
+		size--;
+		return oldObj;
+	}
+	public boolean remove(Object obj) {
+		for(int i=0; i<size; i++) {
+			if(obj.equals(data[i])) {
+				remove(i);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void trimToSize() {
+		setCapacity(size);
+	}
+	
+	private void setCapacity(int capacity) {
+		if(this.capacity==capacity) return;
+		
+		Object[] tmp = new Object[capacity];
+		System.arraycopy(data, 0, tmp, 0, size);
+		data = tmp;
+		this.capacity = capacity;
+	}
+	public void clear() {
+		for(int i=0; i<size; i++) {
+			data[i] =null;
+		size = 0;
+		}
+	}
+	public Object[] toArray() {
+		Object[] result = new Object[size];
+		System.arraycopy(data, 0, result, 0, size);
+		return result;
+	}
+	public boolean isEmpty() { return size==0;}
+	public int capacity() {return capacity;}
+	public int size() {return size;}
 
-class Shape {
-	String color = "black";
-	void draw() {
-		System.out.printf("[color=%s]%n", color);
-	}
-}
-class Point {
-	int x; 
-	int y;
-	
-	Point(int x, int y) {
-		this.x=x;
-		this.y=y;
-	}
-	
-	Point() {
-		this(0, 0);
-	}
-	String getXY() {
-		return "("+x+", "+y+")"; // x와 y값을 문자열로 반환
-	}
-}
-class Circle extends Shape {
-	Point center; // null
-	int r; // 반지름
-	
-	Circle() {
-		this(new Point(0,0),100);
-	}
-	Circle(Point center, int r) {
-		this.center=center;
-		this.r=r;
-	}
-	
-	void draw() {
-		System.out.printf("[center=(%d, %d), r=%d, color=%s]%n", center.x, center.y, r, color);
-	}
-}
+	public boolean cotain(Object o)
 
-class Triangle extends Shape {
-	Point[] p = new Point[3];
-	Triangle(Point[] p) {
-		this.p=p;
-	}
-	void draw() {
-		System.out.printf("[p1=%s, p2=%s, p3=%s, color=%s]%n", p[0].getXY(), p[1].getXY(), p[2].getXY(), color);
-	}
-}
+}//class
+
+
+
+
+
+
+
+
 
 
 
