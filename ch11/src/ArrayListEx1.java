@@ -32,6 +32,8 @@ class ArrayListEx1{
 		print(list1, list2);
 		
 		//  list2에서 list1에 포함된 객체들을 삭제한다.
+		// 만약 i++로 식을 쓰게 되면. 완전히 삭제되지 않는다.
+		// 순차적으로 삭제 시 한칸씩 앞으로 당겨 오기 때문에.
 		for(int i= list2.size()-1; i >= 0; i--) {
 			if(list1.contains(list2.get(i)))
 				list2.remove(i);
@@ -45,3 +47,16 @@ class ArrayListEx1{
 		System.out.println();		
 	}
 } // class
+
+
+
+
+
+
+
+
+
+
+
+
+

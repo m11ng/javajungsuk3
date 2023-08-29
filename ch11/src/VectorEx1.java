@@ -20,7 +20,7 @@ class VectorEx1 {
 		System.out.println("=== After setSize(7) ===");
 		print(v);
 		
-		v.clear();
+		v.clear(); // 객체를 삭제하고 용량은 그대로 유지.
 		System.out.println("=== After clear() ===");
 		print(v);
 	}
