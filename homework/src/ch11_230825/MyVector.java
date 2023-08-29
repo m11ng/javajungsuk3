@@ -66,12 +66,10 @@ public class MyVector {
 	}
 	
 	// objArr에서 지정된 객체가 저장되어 있는 위치를 반환하는 int indexOf(Object obj)를 작성하시오
-	/*
 	public int indexOf(Object obj) {
 		// 이 객체랑 몇번인덱스에 있는 애랑 어떻게 비교할지
-		
+		return -1;
 	}
-	*/
 	public static void main(String[] args) {
 
 		MyVector v = new MyVector(10);
