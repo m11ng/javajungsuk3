@@ -28,8 +28,10 @@ class FruitBoxEx3 {
 
 		fruitBox.add(new Apple3());
 		fruitBox.add(new Grape3());
+		fruitBox.add(new Fruit3());
 		appleBox.add(new Apple3());
 		appleBox.add(new Apple3());
+//		appleBox.add(new Grape3());
 
 		System.out.println(Juicer.makeJuice(fruitBox));
 		System.out.println(Juicer.makeJuice(appleBox));
