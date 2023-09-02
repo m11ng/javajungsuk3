@@ -51,6 +51,11 @@ class FruitBoxEx4 {
 		appleBox.add(new Apple4("GreenApple", 300));
 		appleBox.add(new Apple4("GreenApple", 100));
 		appleBox.add(new Apple4("GreenApple", 200));
+		
+		System.out.println(appleBox.getList());
+		System.out.println(appleBox.toString());
+		
+		System.out.println("-----");
 
 		grapeBox.add(new Grape4("GreenGrape", 400));
 		grapeBox.add(new Grape4("GreenGrape", 300));
