@@ -27,6 +27,11 @@ class ArrayListEx1{
 		list2.set(3, "AA");
 		print(list1, list2);
 		
+		// list1.add(0, "1"); // 문자열 1을 넣은거. integer1과 구분해서 삭제하는 방법 아래2가지
+		// list1.remove(new Integer(1));
+		// list1.remove(5);
+//		System.out.println("index="+list1.indexOf("1")); // list1에서 문자열 1이 어디있는지
+		
 		// list1에서 list2와 겹치는 부분만 남기고 나머지는 삭제한다.
 		System.out.println("list1.retainAll(list2):" + list1.retainAll(list2));	
 		print(list1, list2);
